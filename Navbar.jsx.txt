@@ -1,0 +1,32 @@
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+
+const navLinkClass =
+  'text-sm font-medium text-slate-200 hover:text-white transition-colors';
+
+export default function Navbar() {
+  return (
+    <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <Link to="/" className="flex items-center gap-2">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-lg font-bold">
+            EH
+          </span>
+          <span className="text-lg font-semibold tracking-tight">EventHub</span>
+        </Link>
+
+        <nav className="flex items-center gap-6">
+          <NavLink to="/events" className={navLinkClass}>
+            Browse Events
+          </NavLink>
+          <NavLink
+            to="/login"
+            className="rounded-full bg-indigo-600 px-4 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+          >
+            Get Started
+          </NavLink>
+        </nav>
+      </div>
+    </header>
+  );
+}

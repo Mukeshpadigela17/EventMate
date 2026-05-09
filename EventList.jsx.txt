@@ -1,0 +1,44 @@
+import React, { useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
+import events from '../data/events';
+import EventCard from './EventCard';
+
+function useQuery() {
+  const { search } = useLocation();
+  return useMemo(() => new URLSearchParams(search), [search]);
+}
+
+export default function EventList() {
+  const query = useQuery();
+  const category = query.get('category');
+
+  const filteredEvents = category
+    ? events.filter((e) => e.category === category)
+    : events;
+
+  return (
+    <section className="bg-slate-950">
+      <div className="mx-auto max-w-5xl px-4 py-8">
+        <div className="mb-5 flex items-center justify-between">
+          <div>
+            <h1 className="text-xl font-semibold text-white">Events</h1>
+            {category ? (
+              <p className="text-xs text-slate-400">
+                Showing events under {category}
+              </p>
+            ) : (
+              <p className="text-xs text-slate-400">
+                Discover trending events happening around you.
+              </p>
+            )}
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {filteredEvents.map((ev) => (
+            <EventCard key={ev.id} event={ev} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

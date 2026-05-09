@@ -1,0 +1,57 @@
+const events = [
+  {
+    id: 1,
+    title: 'Blockbuster Movie Premiere',
+    category: 'Movies',
+    location: 'Inorbit Mall, Hyderabad',
+    date: 'Sat, May 2',
+    time: '7:00 PM',
+    price: 299,
+    description: 'Catch the first-day-first-show of the latest action thriller.'
+  },
+  {
+    id: 2,
+    title: 'Indie Rock Concert',
+    category: 'Concerts',
+    location: 'HITEC City Arena, Hyderabad',
+    date: 'Sun, May 3',
+    time: '8:00 PM',
+    price: 799,
+    description:
+      'Experience an electrifying night of indie rock with top local bands.'
+  },
+  {
+    id: 3,
+    title: 'Classic Drama Night',
+    category: 'Drama',
+    location: 'Ravindra Bharathi, Hyderabad',
+    date: 'Fri, May 8',
+    time: '6:30 PM',
+    price: 399,
+    description:
+      'A timeless stage drama performed by acclaimed theatre artists.'
+  },
+  {
+    id: 4,
+    title: 'Midnight City Marathon',
+    category: 'Marathons',
+    location: 'Necklace Road, Hyderabad',
+    date: 'Sat, May 9',
+    time: '11:30 PM',
+    price: 999,
+    description:
+      'Run through the heart of the city with live music and refreshments.'
+  },
+  {
+    id: 5,
+    title: 'Mountain Trek & Camping',
+    category: 'Marathons',
+    location: 'Ananthagiri Hills',
+    date: 'Sat, May 16',
+    time: '5:30 AM',
+    price: 1499,
+    description: 'A weekend trek with camping, bonfire, and stargazing.'
+  }
+];
+
+export default events;

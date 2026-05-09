@@ -1,0 +1,29 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const categories = ['Movies', 'Concerts', 'Drama', 'Marathons'];
+
+export default function Categories() {
+  return (
+    <section className="border-b border-slate-800 bg-slate-950">
+      <div className="mx-auto max-w-5xl px-4 py-10">
+        <h2 className="text-xl font-semibold text-white">
+          Browse by Category
+        </h2>
+        <div className="mt-5 grid gap-4 sm:grid-cols-4">
+          {categories.map((cat) => (
+            <Link
+              key={cat}
+              to={`/events?category=${encodeURIComponent(cat)}`}
+              className="group rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center transition-colors hover:border-indigo-500 hover:bg-slate-900"
+            >
+              <p className="text-sm font-semibold text-white group-hover:text-indigo-300">
+                {cat}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
